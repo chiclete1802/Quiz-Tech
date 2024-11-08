@@ -1,0 +1,254 @@
+body {
+  font-family: 'LT Galaxy', sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: rgb(34, 161, 235);
+	background: -moz-linear-gradient(-45deg, rgb(34, 161, 235) 0%, rgb(6, 117, 74) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(34, 161, 235) 0%, rgba(6, 117, 74) 100%);
+	background: linear-gradient(135deg, rgba(34, 161, 235) 0%, rgba(6, 117, 74) 100%);
+  color: white;
+  text-shadow: 1px 1px #00000088;
+}
+
+#quiz-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+#options button {
+  margin: 5px;
+  padding: 10px;
+}
+
+h1 {
+  font-family: 'Super Squad', sans-serif;
+  font-size: 100px;
+  color: #62d8ff;
+  text-shadow: 5px 5px #15429688;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+#bottom{
+  display: flex;
+  align-items: center;
+}
+
+#bottom img{
+  height: 420px;
+  margin-right: 150px;
+}
+
+#bottom button{
+  font-family: 'LT Galaxy', sans-serif;
+  margin-right: 250px;
+  font-size: 50px;
+  padding: 20px;
+  background: #6ca7ff;
+  color: white;
+  border: 0;
+  border-radius: 3rem;
+  padding-inline: 50px;
+  box-shadow: 5px 5px #15429688;
+  transition: 0.3s;
+  &:hover {
+    background: #427cd4;
+    cursor: pointer;
+    transform: scale(1.1);
+	}
+}
+
+#feedback-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 100px;
+  z-index: 1000;
+}
+
+#played-message{
+  font-size: 20px;
+  margin: 15vh;
+}
+
+#leaderboard-container{
+  border: solid;
+  border-color: black;
+  background-color: white;
+  font-size: 20px;
+  color: black;
+}
+
+#leaderboard-container h2{
+  font-size: 40px;
+  color: #ffc60a;
+  background-color: black;
+  border-bottom: solid;
+  border-color: black;
+  margin: 0;
+  padding: 10px 0px 10px;
+}
+
+#result{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+#result h1{
+  font-family: 'Super Squad', sans-serif;
+  font-size: 100px;
+  color: #e40000;
+  text-shadow: 5px 5px #68000088;
+  margin-bottom: 30px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+#result input{
+  font-family: 'LT Galaxy', sans-serif;
+  font-size: 20px;
+  border-radius: 3rem;
+  padding-inline: 10px;
+}
+
+#result button{
+  font-family: 'LT Galaxy', sans-serif;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 10px;
+  background: #6ca7ff;
+  color: white;
+  border: 0;
+  border-radius: 3rem;
+  padding-inline: 10px;
+  box-shadow: 3px 3px #15429688;
+  transition: 0.3s;
+  &:hover {
+    background: #427cd4;
+    cursor: pointer;
+    transform: scale(1.1);
+	}
+}
+
+#timer{
+  position: absolute;
+  top: 10%;
+  font-family: 'LT Galaxy', sans-serif;
+  font-size: 50px;
+}
+
+#feedback-message{
+  font-family: 'Super Squad', sans-serif;
+  animation: fadeIn 0.2s;
+  animation: fadeOut 0.2s;
+}
+
+#feedback-message text{
+  box-shadow: 5px 5px #1d1d1d88;
+}
+
+#question{
+  font-size: 30px;
+}
+
+#options button{
+  font-family: 'LT Galaxy', sans-serif;
+  font-size: 25px;
+  padding: 10px;
+  background: #ececec;
+  border: 0;
+  border-radius: 3rem;
+  padding-inline: 10px;
+  box-shadow: 3px 3px #1d1d1d88;
+  transition: 0.3s;
+  margin: 10px;
+  &:hover {
+    background: #5a5a5a;
+    cursor: pointer;
+    transform: scale(1.1);
+	}
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  #leaderboard-container{
+    margin: 10px;
+  }
+  #played-message {
+    margin: 0;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  #bottom {
+    display: grid;
+    justify-content: center;
+  }
+  #bottom img {
+    margin: 0;
+    margin-top: 10vh;
+    height: 220px;
+  }
+  #bottom button {
+    margin: 0;
+    margin-top: 10vh;
+    font-size: 20px;
+    padding: 10px;
+  }
+  #question-container{
+    margin: 10px
+  }
+  #save-score-btn{
+    margin-top: 10px;
+  }
+  #feedback-message{
+    font-size: 40px;
+  }
+  #timer{
+    top: 7%;
+  }
+}
