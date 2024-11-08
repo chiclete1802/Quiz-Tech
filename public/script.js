@@ -172,7 +172,7 @@ document.getElementById("save-score-btn").addEventListener("click", async () => 
 });
 
 async function loadLeaderboard(currentPlayer) {
-  const response = await fetch("http://localhost:3000/leaderboard");
+  const response = await fetch("http://localhost:3000/leaderboard/today");
 
   // Verifica se houve erro na requisição
   if (!response.ok) {
@@ -180,12 +180,13 @@ async function loadLeaderboard(currentPlayer) {
     return;
   }
 
-  const leaderboard = await response.json();
+  const leaderboardData = await response.json(); // Objeto que contém { date, leaderboard }
 
   const leaderboardList = document.getElementById("leaderboard");
   leaderboardList.innerHTML = "";
 
-  leaderboard.forEach((entry) => {
+  // Agora leaderboardData.leaderboard é a lista de entradas
+  leaderboardData.leaderboard.forEach((entry) => {
     const listItem = document.createElement("li");
     if (entry.name === currentPlayer) {
       listItem.style.fontWeight = "bold"; // Destacar o jogador atual
